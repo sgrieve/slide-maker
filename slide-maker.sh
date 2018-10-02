@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# $1 - output filename
+# $1 - presentation url
 # $2 - output filename
 
 mkdir screenshots
