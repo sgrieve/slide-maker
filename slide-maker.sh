@@ -3,9 +3,7 @@
 # $1 - presentation url
 # $2 - output filename
 
-mkdir screenshots
-decktape reveal --screenshots --max-slides 200 $1?fragments=true tmp.pdf
-python sorter.py
-convert screenshots/*.png $2
-rm -rf screenshots/
-rm tmp.pdf
+# Using a larger size fixes the formatting issues. Too large starts to tile
+# the background though. Not sure if these values will work universally
+# See for info: https://github.com/astefanutti/decktape/issues/151#issuecomment-456166075
+decktape reveal --max-slides 200 --size='2560x1920' $1?fragments=true $2
